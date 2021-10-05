@@ -88,7 +88,7 @@ git tag --sign --annotate ${RELEASE_CANDIDATE_NAME}
 git push origin ${RELEASE_CANDIDATE_NAME}
 ```
 
-The CI infrastructure will automatically create a tagged Github release and the release candidate will be made available on the [releases](https://github.com/bitnami/kube-prod-runtime/releases) page.
+The CI infrastructure will automatically create a tagged Github release and the release candidate will be made available on the [releases](https://github.com/marvinpuethe/kubeprod/releases) page.
 
 ## Step 4: Iterate on successive release candidates
 
@@ -128,4 +128,4 @@ git tag --sign --annotate ${RELEASE_NAME}
 git push origin $RELEASE_NAME
 ```
 
-After the release has passed the tests successfully, the CI pipeline will automatically package the BKPR release binary and the BKPR jsonnet manifests for the release. The package will then be made available to download from the project [releases](https://github.com/bitnami/kube-prod-runtime/releases) page.
+After the release has passed the tests successfully, the CI pipeline will automatically package the BKPR release binary and the BKPR jsonnet manifests for the release. The package will then be made available to download from the project [releases](https://github.com/marvinpuethe/kubeprod/releases) page.

@@ -37,7 +37,7 @@ import (
 	"github.com/satori/go.uuid"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/bitnami/kube-prod-runtime/kubeprod/tools"
+	"github.com/marvinpuethe/kubeprod/kubeprod/tools"
 )
 
 const (

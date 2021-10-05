@@ -10,7 +10,7 @@ The `kubeprod` binary can be installed from pre-built binary releases or can be 
 
 ### Install from binary releases
 
-BKPR releases are available for 64-bit versions of Linux, macOS and Windows platforms. Download the latest stable version for your platform of choice from the [releases](https://github.com/bitnami/kube-prod-runtime/releases) page.
+BKPR releases are available for 64-bit versions of Linux, macOS and Windows platforms. Download the latest stable version for your platform of choice from the [releases](https://github.com/marvinpuethe/kubeprod/releases) page.
 
 For convenience, let's define the `BKPR_VERSION` environment variable:
 
@@ -31,14 +31,14 @@ echo $BKPR_VERSION
 On Linux:
 
   ```bash
-  curl -LO https://github.com/bitnami/kube-prod-runtime/releases/download/${BKPR_VERSION}/bkpr-${BKPR_VERSION}-linux-amd64.tar.gz
+  curl -LO https://github.com/marvinpuethe/kubeprod/releases/download/${BKPR_VERSION}/bkpr-${BKPR_VERSION}-linux-amd64.tar.gz
   tar xf bkpr-${BKPR_VERSION}-linux-amd64.tar.gz
   ```
 
 On macOS:
 
   ```bash
-  curl -LO https://github.com/bitnami/kube-prod-runtime/releases/download/${BKPR_VERSION}/bkpr-${BKPR_VERSION}-darwin-amd64.tar.gz
+  curl -LO https://github.com/marvinpuethe/kubeprod/releases/download/${BKPR_VERSION}/bkpr-${BKPR_VERSION}-darwin-amd64.tar.gz
   tar xf bkpr-${BKPR_VERSION}-darwin-amd64.tar.gz
   ```
 
@@ -63,7 +63,7 @@ To build the `kubeprod` binary from source you need the [Go](https://golang.org/
 2. Build `kubeprod`:
 
   ```bash
-  go get github.com/bitnami/kube-prod-runtime/kubeprod
+  go get github.com/marvinpuethe/kubeprod/kubeprod
   ```
 
   The `kubeprod` binary will be installed at `$GOPATH/bin/kubeprod`.

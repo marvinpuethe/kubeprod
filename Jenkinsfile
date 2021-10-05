@@ -198,7 +198,7 @@ def runIntegrationTest(String description, String kubeprodArgs, String ginkgoArg
         }
 
         try {
-            sh "kubeprod install ${kubeprodArgs} --manifests=${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/manifests"
+            sh "kubeprod install ${kubeprodArgs} --manifests=${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/manifests"
             try {
                 // DNS set up must run after `kubeprod` install because `kubeprod`
                 // creates the DNS hosted zone in the underlying cloud platform
@@ -207,7 +207,7 @@ def runIntegrationTest(String description, String kubeprodArgs, String ginkgoArg
                 waitForRollout("kubeprod", 1800, 120)
 
                 withGo() {
-                    dir("${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/tests") {
+                    dir("${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/tests") {
                         // NOTE: ginkgo version pinned to the one used in tests/
                         sh 'env GO111MODULE=on go get github.com/onsi/ginkgo/ginkgo@v1.12.0'
                         try {
@@ -364,13 +364,13 @@ spec:
         timeout(time: 180, unit: 'MINUTES') {
             withEnv([
                 "HOME=${env.WORKSPACE}",
-                "PATH+KUBEPROD=${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/kubeprod/bin",
+                "PATH+KUBEPROD=${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/kubeprod/bin",
             ]) {
                 try {
                     scmPostCommitStatus("pending")
 
                     stage('Checkout') {
-                        dir("${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime") {
+                        dir("${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod") {
                             scmCheckout()
                         }
                     }
@@ -394,7 +394,7 @@ spec:
                         installer: {
                             stage('Build') {
                                 withGo() {
-                                    dir("${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/kubeprod") {
+                                    dir("${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/kubeprod") {
                                         sh 'go version'
                                         sh "make all"
                                         sh "make test"
@@ -408,7 +408,7 @@ spec:
                         manifests: {
                             stage('Manifests') {
                                 withGo() {
-                                    dir("${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/manifests") {
+                                    dir("${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/manifests") {
                                         withEnv([
                                             "PATH+KUBECFG=${tool 'kubecfg'}",
                                             "PATH+JSONNET=${tool 'jsonnet'}",
@@ -485,10 +485,10 @@ spec:
                                                     }
 
                                                     writeFile([file: "${env.WORKSPACE}/${clusterName}/kubeprod-manifest.jsonnet", text: """
-                                                        (import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/manifests/platforms/gke.jsonnet") {
+                                                        (import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/manifests/platforms/gke.jsonnet") {
                                                             config:: import "${env.WORKSPACE}/${clusterName}/${clusterName}-autogen.json",
                                                             letsencrypt_environment: "staging",
-                                                            prometheus+: import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/tests/testdata/prometheus-crashloop-alerts.jsonnet",
+                                                            prometheus+: import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/tests/testdata/prometheus-crashloop-alerts.jsonnet",
                                                         }
                                                         """]
                                                     )
@@ -607,10 +607,10 @@ spec:
                                                         )
 
                                                         writeFile([file: "${env.WORKSPACE}/${clusterName}/kubeprod-manifest.jsonnet", text: """
-                                                            (import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/manifests/platforms/aks.jsonnet") {
+                                                            (import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/manifests/platforms/aks.jsonnet") {
                                                                 config:: import "${env.WORKSPACE}/${clusterName}/${clusterName}-autogen.json",
                                                                 letsencrypt_environment: "staging",
-                                                                prometheus+: import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/tests/testdata/prometheus-crashloop-alerts.jsonnet",
+                                                                prometheus+: import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/tests/testdata/prometheus-crashloop-alerts.jsonnet",
                                                             }
                                                             """]
                                                         )
@@ -688,10 +688,10 @@ spec:
                                                     """
 
                                                     writeFile([file: "${env.WORKSPACE}/${clusterName}/kubeprod-manifest.jsonnet", text: """
-                                                        (import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/manifests/platforms/eks.jsonnet") {
+                                                        (import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/manifests/platforms/eks.jsonnet") {
                                                             config:: import "${env.WORKSPACE}/${clusterName}/${clusterName}-autogen.json",
                                                             letsencrypt_environment: "staging",
-                                                            prometheus+: import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/tests/testdata/prometheus-crashloop-alerts.jsonnet",
+                                                            prometheus+: import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/tests/testdata/prometheus-crashloop-alerts.jsonnet",
                                                         }
                                                         """]
                                                     )
@@ -810,10 +810,10 @@ spec:
                                                     )
 
                                                     writeFile([file: "${env.WORKSPACE}/${clusterName}/kubeprod-manifest.jsonnet", text: """
-                                                        (import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/manifests/platforms/generic.jsonnet") {
+                                                        (import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/manifests/platforms/generic.jsonnet") {
                                                             config:: import "${env.WORKSPACE}/${clusterName}/${clusterName}-autogen.json",
                                                             letsencrypt_environment: "staging",
-                                                            prometheus+: import "${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime/tests/testdata/prometheus-crashloop-alerts.jsonnet",
+                                                            prometheus+: import "${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod/tests/testdata/prometheus-crashloop-alerts.jsonnet",
                                                         }
                                                         """]
                                                     )
@@ -862,7 +862,7 @@ spec:
 
                     stage('Release') {
                         if(env.TAG_NAME) {
-                            dir("${env.WORKSPACE}/src/github.com/bitnami/kube-prod-runtime") {
+                            dir("${env.WORKSPACE}/src/github.com/marvinpuethe/kubeprod") {
                                 withGo() {
                                     withCredentials([
                                         usernamePassword(credentialsId: 'github-bitnami-bot', passwordVariable: 'GITHUB_TOKEN', usernameVariable: ''),

@@ -26,7 +26,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	kubeprodcmd "github.com/bitnami/kube-prod-runtime/kubeprod/cmd"
+	kubeprodcmd "github.com/marvinpuethe/kubeprod/kubeprod/cmd"
 )
 
 const (

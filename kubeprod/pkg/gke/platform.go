@@ -41,7 +41,7 @@ import (
 	"google.golang.org/api/googleapi"
 	adminpb "google.golang.org/genproto/googleapis/iam/admin/v1"
 
-	"github.com/bitnami/kube-prod-runtime/kubeprod/tools"
+	"github.com/marvinpuethe/kubeprod/kubeprod/tools"
 )
 
 func init() {

@@ -47,7 +47,7 @@ local NGNIX_INGRESS_IMAGE = (import "images.json")["nginx-ingress-controller"];
       noauth:: ["/.well-known/acme-challenge", "/oauth2"],
       "no-auth-locations": std.join(",", std.set(self.noauth)),
 
-      // Address https://github.com/bitnami/kube-prod-runtime/issues/815
+      // Address https://github.com/marvinpuethe/kubeprod/issues/815
       "http2-max-field-size": "16k",  // default: 4k
       "http2-max-header-size": "64k",  // default: 16k
     },

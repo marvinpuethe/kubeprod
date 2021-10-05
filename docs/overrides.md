@@ -47,7 +47,7 @@ kind: HorizontalPodAutoscaler
      name: oauth2-proxy
 ```
 
-That snippet comes from the [`oauth2-proxy.jsonnet`](https://github.com/bitnami/kube-prod-runtime/blob/master/manifests/components/oauth2-proxy.jsonnet) file, that gets imported in the previous one. Specifically, this is the part about the HorizontalPodAutoscaler:
+That snippet comes from the [`oauth2-proxy.jsonnet`](https://github.com/marvinpuethe/kubeprod/blob/master/manifests/components/oauth2-proxy.jsonnet) file, that gets imported in the previous one. Specifically, this is the part about the HorizontalPodAutoscaler:
 
 ```jsonnet
 hpa: kube.HorizontalPodAutoscaler($.p + "oauth2-proxy") + $.metadata {
@@ -56,7 +56,7 @@ hpa: kube.HorizontalPodAutoscaler($.p + "oauth2-proxy") + $.metadata {
 },
 ```
 
-`hpa` is a variable name used in `oauth2-proxy.jsonnet`, and you can see that `oauth2-proxy.jsonnet` itself is imported in a variable name called `oauth2_proxy` in the [main platform manifest](https://github.com/bitnami/kube-prod-runtime/blob/master/manifests/platforms/gke.jsonnet#L28).
+`hpa` is a variable name used in `oauth2-proxy.jsonnet`, and you can see that `oauth2-proxy.jsonnet` itself is imported in a variable name called `oauth2_proxy` in the [main platform manifest](https://github.com/marvinpuethe/kubeprod/blob/master/manifests/platforms/gke.jsonnet#L28).
 
 Let's imagine we want to limit the number of replicas of `oauth2-proxy` to 5 replicas. In order to do that, we would need to edit the `kubeprod-manifest.jsonnet` file to the following:
 
@@ -166,7 +166,7 @@ spec:
       volumes: []
 ```
 
-That snippet comes from the [`cert-manager.jsonnet`](https://github.com/bitnami/kube-prod-runtime/blob/master/manifests/components/cert-manager.jsonnet) file, which is imported by the main platform file (eg `gke.jsonnet`). Specifically, this section of the file describes the pre-configured Let's Encrypt environments:
+That snippet comes from the [`cert-manager.jsonnet`](https://github.com/marvinpuethe/kubeprod/blob/master/manifests/components/cert-manager.jsonnet) file, which is imported by the main platform file (eg `gke.jsonnet`). Specifically, this section of the file describes the pre-configured Let's Encrypt environments:
 
 ```jsonnet
   // Letsencrypt environments

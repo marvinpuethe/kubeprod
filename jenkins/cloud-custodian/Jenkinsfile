@@ -3,7 +3,7 @@
 // This Jenkins pipeline take care of the clean-up process
 // of stale resources that may be left behind in BKPR Jenkins tests
 // (both manual or automated).
-// It uses https://github.com/cloud-custodian/cloud-custodian as the 
+// It uses https://github.com/cloud-custodian/cloud-custodian as the
 // rules engine to control all of the different cloud resources.
 //
 // This job will lock all of the BKPR platforms prior running the
@@ -47,7 +47,7 @@ Void runCloudCustodian (String envs, String cloud, String region) {
 
 // This method locks all the BKPR platforms.
 //
-// It doesn't deadlock, as the main Jenkins BKPR pipeline 
+// It doesn't deadlock, as the main Jenkins BKPR pipeline
 // locks the different platforms in a parallel way.
 def lockBkprPlatforms(platforms, closure) {
   if (platforms.size() > 1) {
@@ -73,7 +73,7 @@ node('jnlp-agent-docker') {
       retry(3) {
         try {
           sh """
-            git clone --single-branch --branch ${REMOTE_BRANCH} https://github.com/bitnami/kube-prod-runtime
+            git clone --single-branch --branch ${REMOTE_BRANCH} https://github.com/marvinpuethe/kubeprod
           """
         } catch(e) {
           print "Clone operation failed, retrying ..."
@@ -92,7 +92,7 @@ node('jnlp-agent-docker') {
     List platforms = []
     buildRelDefaults.each {k, v ->
       cloud = k.split('_')[0].toLowerCase()
-    
+
       for (version in v.split(',')) {
         platforms.add("${cloud}-${version}")
       }
@@ -128,7 +128,7 @@ node('jnlp-agent-docker') {
   } catch (e) {
 
     slackSend color: 'danger', message: """
-    The Jenkins-BKPR Cloud Custodian execution failed. 
+    The Jenkins-BKPR Cloud Custodian execution failed.
     Error message:
     *${e.message}.*
     <${env.BUILD_URL}|:jenkins: Click here for more info>

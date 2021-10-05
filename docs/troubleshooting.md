@@ -53,7 +53,7 @@ In order to be able to provision Kubernetes clusters, the Kubernetes Engine API 
 
 ### Object with the same value for property exists
 
-__[Reported in issue #242](https://github.com/bitnami/kube-prod-runtime/issues/242)__
+__[Reported in issue #242](https://github.com/marvinpuethe/kubeprod/issues/242)__
 
 While installing BKPR on an AKS cluster, if you notice the following error message from `kubeprod install`, it indicates that another Azure service principal with the same value exists.
 
@@ -147,7 +147,7 @@ Additionally, the container logs may contain useful information about the error 
 kubectl -n kubeprod logs $(kubectl -n kubeprod get pods -l name=external-dns -o name)
 ```
 
-If you are unable to determine the cause of the error, [create a support request](https://github.com/bitnami/kube-prod-runtime/issues/new) describing your environment and remember to attach the output of the last two commands to the support request.
+If you are unable to determine the cause of the error, [create a support request](https://github.com/marvinpuethe/kubeprod/issues/new) describing your environment and remember to attach the output of the last two commands to the support request.
 
 ### ExternalDNS is not updating DNS zone records
 

@@ -35,7 +35,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/iam"
 	"github.com/aws/aws-sdk-go/service/route53"
 	"github.com/aws/aws-sdk-go/service/sts"
-	"github.com/bitnami/kube-prod-runtime/kubeprod/tools"
+	"github.com/marvinpuethe/kubeprod/kubeprod/tools"
 
 	"github.com/google/uuid"
 

@@ -1,4 +1,4 @@
-module github.com/bitnami/kube-prod-runtime/tests
+module github.com/marvinpuethe/kubeprod/tests
 
 go 1.14
 

@@ -14,7 +14,7 @@ These workflows are intended for users of BKPR, most likely developers, DevOps, 
 ## Pre-requisites
 
 * [Kubernetes cluster](../readme.md#kubernetes-version-support-matrix)
-* [`kubeprod`](https://github.com/bitnami/kube-prod-runtime/releases) binary
+* [`kubeprod`](https://github.com/marvinpuethe/kubeprod/releases) binary
 * [`kubecfg`](https://github.com/ksonnet/kubecfg/releases) binary
 
 ## Basic workflow

@@ -1,4 +1,4 @@
-module github.com/bitnami/kube-prod-runtime/kubeprod
+module github.com/marvinpuethe/kubeprod/kubeprod
 
 go 1.14
 

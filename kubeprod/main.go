@@ -25,16 +25,16 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/bitnami/kube-prod-runtime/kubeprod/cmd"
+	"github.com/marvinpuethe/kubeprod/kubeprod/cmd"
 
 	// Register k8s auth plugins
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
 
 	// Register platform-specific packages
-	_ "github.com/bitnami/kube-prod-runtime/kubeprod/pkg/aks"
-	_ "github.com/bitnami/kube-prod-runtime/kubeprod/pkg/eks"
-	_ "github.com/bitnami/kube-prod-runtime/kubeprod/pkg/generic"
-	_ "github.com/bitnami/kube-prod-runtime/kubeprod/pkg/gke"
+	_ "github.com/marvinpuethe/kubeprod/kubeprod/pkg/aks"
+	_ "github.com/marvinpuethe/kubeprod/kubeprod/pkg/eks"
+	_ "github.com/marvinpuethe/kubeprod/kubeprod/pkg/generic"
+	_ "github.com/marvinpuethe/kubeprod/kubeprod/pkg/gke"
 )
 
 // Overridden at link time by Makefile.

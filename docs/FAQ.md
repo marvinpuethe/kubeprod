@@ -42,7 +42,7 @@ A: Please refer to the [BKPR upgrade section, in the workflow document](workflow
 A: Please refer to the BKPR upgrades and support document.
 
 #### Q: Where can I subscribe to an update feed, specially for security-updates?
-A: Follow the [releases section in the GitHub project](https://github.com/bitnami/kube-prod-runtime/releases). The *changelog* for every release describes the bug fixes, security updates and new features.
+A: Follow the [releases section in the GitHub project](https://github.com/marvinpuethe/kubeprod/releases). The *changelog* for every release describes the bug fixes, security updates and new features.
 
 #### Q: I found a bug / I want XYZ component to be added, etc.
-A: When there are any issues or comments you want to report, please do report them by [creating an issue in GitHub](https://github.com/bitnami/kube-prod-runtime/issues).
+A: When there are any issues or comments you want to report, please do report them by [creating an issue in GitHub](https://github.com/marvinpuethe/kubeprod/issues).

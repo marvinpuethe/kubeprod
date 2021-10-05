@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-UPSTREAM_REPO_URL="${UPSTREAM_REPO_URL:-https://github.com/bitnami/kube-prod-runtime}"
+UPSTREAM_REPO_URL="${UPSTREAM_REPO_URL:-https://github.com/marvinpuethe/kubeprod}"
 DEVELOPMENT_REPO_URL="${DEVELOPMENT_REPO_URL:-https://github.com/bitnami-bot/kube-prod-runtime}"
 MANIFESTS_IMAGES_JSON="manifests/components/images.json"
 

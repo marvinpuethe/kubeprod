@@ -11,8 +11,8 @@ Furthermore, this process will not generate any downtime for your current Promet
 The following prerequisites should be met before starting with the migration process:
 
 * You have a healthy Kubernetes cluster running.
-* You have a Prometheus deployment that *matches the BKPR Prometheus version*, which can be obtained from [the BKPR release compatibility table](https://github.com/bitnami/kube-prod-runtime#release-compatibility).
-* You have already read the [Kubeprod workflow documentation](https://github.com/bitnami/kube-prod-runtime/blob/master/docs/workflow.md)
+* You have a Prometheus deployment that *matches the BKPR Prometheus version*, which can be obtained from [the BKPR release compatibility table](https://github.com/marvinpuethe/kubeprod#release-compatibility).
+* You have already read the [Kubeprod workflow documentation](https://github.com/marvinpuethe/kubeprod/blob/master/docs/workflow.md)
 * [Kubecfg binary](https://github.com/ksonnet/kubecfg/releases)
 
 This article will not cover the Prometheus upgrade process. If you need to update your Prometheus deployment, check the [Prometheus docs](https://prometheus.io/docs/prometheus/latest/migration/)

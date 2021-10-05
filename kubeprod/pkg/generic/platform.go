@@ -25,7 +25,7 @@ import (
 	"github.com/google/uuid"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/bitnami/kube-prod-runtime/kubeprod/tools"
+	"github.com/marvinpuethe/kubeprod/kubeprod/tools"
 )
 
 func (conf *GenericConfig) Generate(ctx context.Context) error {

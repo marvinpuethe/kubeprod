@@ -5,7 +5,7 @@
 Requires a typical golang development environment.  To build:
 
 ```sh
-go get github.com/bitnami/kube-prod-runtime/kubeprod
+go get github.com/marvinpuethe/kubeprod/kubeprod
 ```
 
 For deployment against Azure Kubernetes Service (AKS):
@@ -21,7 +21,7 @@ az aks create --resource-group "${AZURE_RESOURCE_GROUP_NAME}" --name "${AKS_CLUS
 az aks get-credentials --resource-group "${AZURE_RESOURCE_GROUP_NAME}" --name "${AKS_CLUSTER_NAME}"
 
 # Run "kubeprod" to populate the AKS cluster
-cd ${GOPATH:-$HOME/go}/src/github.com/bitnami/kube-prod-runtime/kubeprod
+cd ${GOPATH:-$HOME/go}/src/github.com/marvinpuethe/kubeprod/kubeprod
 make
 ./bin/kubeprod install aks \
     --email "<your e-mail address>" \

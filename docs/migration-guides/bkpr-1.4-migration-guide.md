@@ -4,7 +4,7 @@ This document is for users who want to upgrade their Kubernetes clusters to BKPR
 
 ## Requirements
 
-* [Kubernetes cluster with BKPR v1.3.6](https://github.com/bitnami/kube-prod-runtime/releases/tag/v1.3.6)
+* [Kubernetes cluster with BKPR v1.3.6](https://github.com/marvinpuethe/kubeprod/releases/tag/v1.3.6)
 
 ## Overview
 
